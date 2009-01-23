@@ -1,4 +1,10 @@
+h1. travelogue
+
 To test, run test.py and it'll index all the *.txt files in source/
 
 It's pretty basic, just a stupid hack for now. I'm in the process
 of porting this to erlang/mnesia instead of just python and variables.
+
+h2. Disclaimer
+
+This is complete and total utter BULLSHIT code right now. I just wanted to get my ideas in code.
