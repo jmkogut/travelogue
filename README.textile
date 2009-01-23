@@ -8,3 +8,11 @@ of porting this to erlang/mnesia instead of just python and variables.
 h2. Disclaimer
 
 This is complete and total utter BULLSHIT code right now. I just wanted to get my ideas in code.
+
+h2. Second Disclaimer
+
+Oh by the way this is written for Python 3.0. Tutaah!
+
+h2. PS
+
+Even though the IO in Python 3.0 is considerably slower, the processing shit is HELLA faster.

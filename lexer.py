@@ -10,13 +10,13 @@ class Lexer(object):
 
     def add_document(self, source):
         index = {}
-        content = " ".join(file(source).readlines())
+        content = " ".join(open(source).readlines())
         
         # gay as fuck way of formatting for the lexer
         tokenlist = self.tokens_from(content)
 
         for token in tokenlist:
-            if token in index.keys():
+            if token in list(index.keys()):
                 index[token] += TOKEN_VALUE
             else:
                 index[token] = TOKEN_VALUE
@@ -24,14 +24,14 @@ class Lexer(object):
         self.documents[source] = index
 
     def index(self, document):
-        if document not in self.documents.keys():
+        if document not in list(self.documents.keys()):
             self.add_document(document)
 
         self._index(document)
     
     def _index(self, document):
         for token in self.documents[document]:
-            if token in self.tokens.keys():
+            if token in list(self.tokens.keys()):
                 if document not in self.tokens[token]:
                     self.tokens[token].append(document)
             else:
@@ -49,9 +49,9 @@ class Lexer(object):
         return tokens
 
     def sort_tokens(self):
-        self.sort_order = sorted(self.tokens.items(), lambda x, y:
-                                 cmp(self.count_token(x[0]),
-                                     self.count_token(y[0])), reverse=True)
+        self.sort_order = sorted(list(self.tokens.items()),
+            key = lambda x: self.count_token(x[0]),
+            reverse=True)
 
     def count_token(self, token):
         count = 0
