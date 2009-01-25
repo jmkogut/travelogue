@@ -1,11 +1,20 @@
 -module(test).
--export([run/0, get_sources/0, forward_index/1, forward_index/2, file/1, file/0,
-stopwatch/4]).
+-export([run/0, old_run/0, new_run/0, get_sources/0, forward_index/1, forward_index/2, file/1, file/0, stopwatch/4]).
 
 run() ->
+    new_run().
+
+% Iterative, sucks ass
+old_run() ->
     Files = stopwatch("Source Files", test, get_sources, []),
     ForwardIndexes = stopwatch("Indexing Files", test, forward_index, [Files]),
     ForwardIndexes.
+
+% Threaded, pure sex
+new_run() ->
+    Files = stopwatch("Source Files", test, get_sources, []),
+    
+
 
 stopwatch(Name, Module, Function, Params) ->
     io:format("-- ~s~n", [Name]),
