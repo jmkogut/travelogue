@@ -33,7 +33,7 @@ s = start('Statistics')
 print("\tTokens: %s" % (len(l.tokens)))
 print("\tDocuments: %s" % (len(l.documents)))
 
-range = (0,30)
+range = (0,5)
 
 print("\n")
 print("Finding %s-%s most seen tokens" % (range[0], range[1]))
