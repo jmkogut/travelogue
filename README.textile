@@ -2,8 +2,7 @@ h1. travelogue
 
 To test, run test.py and it'll index all the *.txt files in source/
 
-It's pretty basic, just a stupid hack for now. I'm in the process
-of porting this to erlang/mnesia instead of just python and variables.
+It's pretty basic, just a stupid hack for now. I ported this to erlang/merle in the erlang branch but performance was TERRIBLE so I won't go any further. All further development will be in Python/memcached
 
 h2. Disclaimer
 
